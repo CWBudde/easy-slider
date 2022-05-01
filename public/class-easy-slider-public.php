@@ -73,14 +73,12 @@ class Easy_Slider_Public {
 		 * class.
 		 */
 
-		if( has_block('easy-slider/slider-block')){
+		if ( has_block('easy-slider/slider-block') ) {
 
 			if (defined('WP_DEBUG') && true === WP_DEBUG) {
 				wp_enqueue_style( 'slick', plugin_dir_url( __FILE__ ) . 'css/slick.css', array( ), $this->version, 'all' );
 				wp_enqueue_style( 'slick-theme', plugin_dir_url( __FILE__ ) . 'css/slick-theme.css', array( ), $this->version, 'all' );
-
-			}
-			else{
+			} else {
 				wp_enqueue_style( 'slick', plugin_dir_url( __FILE__ ) . 'css/slick.min.css', array( ), $this->version, 'all' );
 			}
 			
@@ -108,16 +106,10 @@ class Easy_Slider_Public {
 		if( has_block('easy-slider/slider-block') ){
 			if (defined('WP_DEBUG') && true === WP_DEBUG) {
 				wp_enqueue_script( 'slick', plugin_dir_url( __FILE__ ) . 'js/slick.js', array('jquery' ), $this->version, 'all' );
-			}
-			else{
+			} else {
 				wp_enqueue_script( 'slick', plugin_dir_url( __FILE__ ) . 'js/slick.min.js', array( 'jquery' ), $this->version, 'all' );
 			}
 			wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/easy-slider-public.js', array( 'slick' ), $this->version, false );
-
 		}
-		
-
-		
 	}
-
 }
